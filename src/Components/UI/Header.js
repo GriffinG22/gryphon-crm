@@ -8,7 +8,9 @@ const Header = (props) => {
         <img className="logo" src={logo} alt="Gryphon Logo" />
         <h2 className="header_text">CRM</h2>
       </div>
-      <div></div>
+      <div className="svg_cont">
+        <p className="svg">SVG</p>
+      </div>
     </nav>
   );
 };
