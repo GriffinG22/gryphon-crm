@@ -5,7 +5,6 @@ const Form = (props) => {
   const [enteredName, setEnteredName] = useState("");
   const [enteredOrg, setEnteredOrg] = useState("");
   const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAge, setEnteredAge] = useState("");
   const [enteredPhone, setEnteredPhone] = useState("");
   const [enteredEmail, setEnteredEmail] = useState("");
 
@@ -19,10 +18,6 @@ const Form = (props) => {
 
   const titleChangeHandler = (e) => {
     setEnteredTitle(e.target.value);
-  };
-
-  const ageChangeHandler = (e) => {
-    setEnteredAge(e.target.value);
   };
 
   const phoneChangeHandler = (e) => {
@@ -39,7 +34,7 @@ const Form = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler}>
+    <form className="form" onSubmit={submitHandler}>
       <div className="input_fields">
         <div className="form_field">
           <label>Name</label>
@@ -59,24 +54,13 @@ const Form = (props) => {
           ></input>
         </div>
 
-        <div className="form_field_split">
-          <div className="form_field">
-            <label>Title</label>
-            <input
-              type="text"
-              value={enteredTitle}
-              onChange={titleChangeHandler}
-            ></input>
-          </div>
-
-          <div className="form_field">
-            <label>Age</label>
-            <input
-              type="text"
-              value={enteredAge}
-              onChange={ageChangeHandler}
-            ></input>
-          </div>
+        <div className="form_field">
+          <label>Title</label>
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          ></input>
         </div>
 
         <div className="form_field">

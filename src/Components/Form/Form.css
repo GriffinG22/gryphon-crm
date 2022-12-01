@@ -1,0 +1,31 @@
+.form {
+  margin: 30px;
+  padding: 15px 30px;
+
+  border: 1px solid green;
+}
+
+.form_field {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.form_field label {
+  font-weight: bold;
+  margin-bottom: 0;
+  display: block;
+}
+
+.form_field input {
+  font: inherit;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 400px;
+  max-width: 100%;
+  margin-bottom: 15px;
+}
