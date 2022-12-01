@@ -1,13 +1,17 @@
 import React from "react";
 
 import Header from "./Components/UI/Header";
+import Form from "./Components/Form/Form";
 import "./App.css";
 
 function App() {
   return (
-    <body>
+    <div>
       <Header />
-    </body>
+      <section className="content">
+        <Form />
+      </section>
+    </div>
   );
 }
 
