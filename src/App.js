@@ -5,11 +5,23 @@ import Form from "./Components/Form/Form";
 import "./App.css";
 
 function App() {
+  const entries = [];
+
+  const saveEntryData = (enteredEntryData) => {
+    const entryData = {
+      ...enteredEntryData,
+      id: Math.random().toString(),
+    };
+
+    entries.push(entryData);
+    console.log(entries);
+  };
+
   return (
     <div>
       <Header />
       <section className="content">
-        <Form />
+        <Form onSaveEntryData={saveEntryData} />
       </section>
     </div>
   );

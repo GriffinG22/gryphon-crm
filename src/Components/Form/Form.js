@@ -30,7 +30,22 @@ const Form = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log("form-submit");
+
+    const entryData = {
+      name: enteredName,
+      org: enteredOrg,
+      title: enteredTitle,
+      phone: enteredPhone,
+      email: enteredEmail,
+    };
+
+    props.onSaveEntryData(entryData);
+
+    setEnteredName("");
+    setEnteredOrg("");
+    setEnteredTitle("");
+    setEnteredPhone("");
+    setEnteredEmail("");
   };
 
   return (
