@@ -4,12 +4,19 @@
 
   height: 70vh;
 
+  max-width: 500px;
+
   border-radius: 12px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
 .input_fields {
   margin-top: 30px;
+}
+
+.form_actions {
+
+max-width: 400px;
 }
 
 .form_field {
@@ -66,7 +73,7 @@
   border: none;
   border-radius: 15px;
 
-  width: 67%;
+  max-width: 100%;
 
   border: 1px solid #4c5052;
 
