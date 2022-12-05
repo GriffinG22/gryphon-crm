@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from "./Components/UI/Header";
 import Form from "./Components/Form/Form";
+import Footer from "./Components/UI/Footer";
 import "./App.css";
 
 function App() {
@@ -22,7 +23,9 @@ function App() {
       <Header />
       <section className="content">
         <Form onSaveEntryData={saveEntryData} />
+        <div className="user_entries__container">entries rendered here</div>
       </section>
+      <Footer />
     </div>
   );
 }

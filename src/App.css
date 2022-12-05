@@ -18,3 +18,13 @@ dl,
 dd {
   margin: 0;
 }
+
+.content {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+}
+
+.user_entries__container {
+  margin: 30px;
+  padding: 15px 30px;
+}

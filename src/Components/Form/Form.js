@@ -98,8 +98,10 @@ const Form = (props) => {
       </div>
 
       <div className="form_actions">
-        <button>Cancel</button>
-        <button type="submit">Add Contact</button>
+        <button className="cancel_button">Cancel</button>
+        <button className="submit_button" type="submit">
+          Add Contact
+        </button>
       </div>
     </form>
   );
