@@ -51,17 +51,20 @@ function App() {
       <Header />
       <section className="content">
         <Form onSaveEntryData={saveEntryData} />
-        <div className="user_entries__container">
-          {entries.slice(0,4).map((entry) => (
-            <UserEntry
-              key={entry.id}
-              email={entry.email}
-              org={entry.org}
-              name={entry.name}
-              phone={entry.phone}
-              title={entry.title}
-            />
-          ))}
+        <div className="rendered_content">
+          <div className="user_entries__container">
+            {entries.slice(0,4).map((entry) => (
+              <UserEntry
+                key={entry.id}
+                email={entry.email}
+                org={entry.org}
+                name={entry.name}
+                phone={entry.phone}
+                title={entry.title}
+              />
+            ))}
+          </div>
+          <div className="pagination">btn . . . btn</div>
         </div>
       </section>
       <Footer />
