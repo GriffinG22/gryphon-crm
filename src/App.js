@@ -34,6 +34,8 @@ function App() {
     },
   ]);
 
+  const [page, setPage] = useState(1);
+
   const saveEntryData = (enteredEntryData) => {
     const entryData = {
       ...enteredEntryData,
@@ -50,7 +52,7 @@ function App() {
       <section className="content">
         <Form onSaveEntryData={saveEntryData} />
         <div className="user_entries__container">
-          {entries.map((entry) => (
+          {entries.slice(0,4).map((entry) => (
             <UserEntry
               key={entry.id}
               email={entry.email}
