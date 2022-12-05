@@ -3,6 +3,13 @@
   padding: 15px 30px;
 
   height: 70vh;
+
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.input_fields {
+  margin-top: 30px;
 }
 
 .form_field {
@@ -39,6 +46,8 @@
   border-radius: 15px;
   cursor: pointer;
 
+  width: 25%;
+
   margin-top: 25px;
 
   border: 1px solid #4c5052;
@@ -54,11 +63,10 @@
 
 .submit_button {
   padding: 15px 30px;
-  margin-right: 20px;
   border: none;
   border-radius: 15px;
 
-  width: 57%;
+  width: 67%;
 
   border: 1px solid #4c5052;
 

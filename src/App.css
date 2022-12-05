@@ -21,7 +21,7 @@ dd {
 
 .content {
   display: grid;
-  grid-template-columns: 40fr 60fr;
+  grid-template-columns: 35fr 65fr;
 }
 
 .user_entries__container {

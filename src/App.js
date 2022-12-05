@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Header from "./Components/UI/Header";
 import Form from "./Components/Form/Form";
+import UserEntry from "./Components/Entries/UserEntry";
 import Footer from "./Components/UI/Footer";
 import "./App.css";
 
 function App() {
-  const entries = [];
+  const [entries, setEntries] = useState([
+    {
+      email: "joe@test.com",
+      id: 1,
+      name: "Joe Thomas",
+      org: "Test Co.",
+      phone: "123-456-7890",
+      title: "CEO",
+    },
+    {
+      email: "sam@test.com",
+      id: 2,
+      name: "Sam Smith",
+      org: "Test Co.",
+      phone: "321-456-7890",
+      title: "COO",
+    },
+    {
+      email: "lex@test.com",
+      id: 3,
+      name: "Lex Freidman",
+      org: "Test Co.",
+      phone: "123-654-7890",
+      title: "Host",
+    },
+  ]);
 
   const saveEntryData = (enteredEntryData) => {
     const entryData = {
       ...enteredEntryData,
-      id: Math.random().toString(),
+      id: +Math.random().toString(),
     };
 
-    entries.push(entryData);
+    setEntries([entryData, ...entries]);
     console.log(entries);
   };
 
@@ -23,7 +49,18 @@ function App() {
       <Header />
       <section className="content">
         <Form onSaveEntryData={saveEntryData} />
-        <div className="user_entries__container">entries rendered here</div>
+        <div className="user_entries__container">
+          {entries.map((entry) => (
+            <UserEntry
+              key={entry.id}
+              email={entry.email}
+              org={entry.org}
+              name={entry.name}
+              phone={entry.phone}
+              title={entry.title}
+            />
+          ))}
+        </div>
       </section>
       <Footer />
     </div>
