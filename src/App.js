@@ -9,32 +9,39 @@ import "./App.css";
 function App() {
   const [entries, setEntries] = useState([
     {
-      email: "joe@test.com",
+      email: "luka@mavs.com",
       id: 1,
-      name: "Joe Thomas",
-      org: "Test Co.",
+      name: "Luka Doncic",
+      org: "Dallas Mavericks",
       phone: "123-456-7890",
-      title: "CEO",
+      title: "Point Guard",
     },
     {
-      email: "sam@test.com",
+      email: "anthony@rhcp.com",
       id: 2,
-      name: "Sam Smith",
-      org: "Test Co.",
+      name: "Anthony Kiedis",
+      org: "RHCP",
       phone: "321-456-7890",
-      title: "COO",
+      title: "Singer",
     },
     {
-      email: "lex@test.com",
+      email: "lex@podcast.com",
       id: 3,
       name: "Lex Freidman",
-      org: "Test Co.",
+      org: "Lex Freidman Podcast",
       phone: "123-654-7890",
-      title: "Host",
+      title: "Podcast Host",
     },
   ]);
 
   const [page, setPage] = useState(1);
+
+  const [entriesPerPage] = useState(4);
+
+  const indexOfLastEntry = page * entriesPerPage;
+  const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+
+  const currentEntries = entries.slice(indexOfFirstEntry, indexOfLastEntry);
 
   const saveEntryData = (enteredEntryData) => {
     const entryData = {
@@ -43,7 +50,20 @@ function App() {
     };
 
     setEntries([entryData, ...entries]);
-    console.log(entries);
+  };
+
+  const nextBtnHandler = (e) => {
+    if (entries.length / page < entriesPerPage) {
+      return;
+    }
+    setPage(page + 1);
+  };
+
+  const backBtnHandler = (e) => {
+    if (page < 2) {
+      return;
+    }
+    setPage(page - 1);
   };
 
   return (
@@ -53,7 +73,7 @@ function App() {
         <Form onSaveEntryData={saveEntryData} />
         <div className="rendered_content">
           <div className="user_entries__container">
-            {entries.slice(0,4).map((entry) => (
+            {currentEntries.map((entry) => (
               <UserEntry
                 key={entry.id}
                 email={entry.email}
@@ -64,7 +84,22 @@ function App() {
               />
             ))}
           </div>
-          <div className="pagination">btn . . . btn</div>
+          <div className="pagination">
+            <button
+              onClick={backBtnHandler}
+              className={`pagination-back ${page > 1 ? "" : "btn-hidden"}`}
+            >
+              Back
+            </button>
+            <button
+              onClick={nextBtnHandler}
+              className={`pagination-next ${
+                entries.length / page > entriesPerPage ? "" : "btn-hidden"
+              }`}
+            >
+              Next
+            </button>
+          </div>
         </div>
       </section>
       <Footer />
